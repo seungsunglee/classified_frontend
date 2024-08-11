@@ -1,0 +1,53 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["import"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "builtin",
+            "position": "after"
+          },
+          {
+            "pattern": "@mui/**/*",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "@/lib/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "@/hooks/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "@/contexts/**",
+            "group": "parent",
+            "position": "before"
+          },
+          {
+            "pattern": "@/components/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "newlines-between": "always"
+      }
+    ]
+  }
+}
